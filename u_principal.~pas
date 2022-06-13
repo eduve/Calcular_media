@@ -14,11 +14,6 @@ type
     nota3: TEdit;
     nota4: TEdit;
     btn_calcular: TButton;
-    Label1: TLabel;
-    Label2: TLabel;
-    Label3: TLabel;
-    Label4: TLabel;
-    Label5: TLabel;
     procedure btn_calcularClick(Sender: TObject);
   private
     { Private declarations }
@@ -42,23 +37,9 @@ begin
    n3 := StrToFloat( nota3.Text );
    n4 := StrToFloat( nota4.Text );
 
- if (nome.Text = '') then
- begin
-   showMessage('O nome nao pode ficar em branco!');
- end else
- begin
-   if (n1>=0) and (n1<=10) and
-      (n2>=0) and (n2<=10) and
-      (n3>=0) and (n3<=10) and
-      (n4>=0) and (n4<=10) then
-   begin
-    media := ( n1 + n2 + n3 + n4 ) / 4;
-    showMessage(nome.Text + ' sua média é ' + FloatToStr(media));
-   end else
-   begin
-    showMessage('As notas precisam ser maiores que 0 e menores que 10!');
-   end;
- end;
+   media := ( n1 + n2 + n3 + n4 ) / 4;
+
+   showMessage(nome.Text + ' sua média é ' + FloatToStr(media));
 end;
 
 end.
